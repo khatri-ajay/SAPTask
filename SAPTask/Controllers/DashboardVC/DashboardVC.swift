@@ -28,3 +28,13 @@ class DashboardVC: UIViewController {
     }
 
 }
+extension DashboardVC {
+    // MARK: - Adding UI object to view
+    private func setupViews() {
+        view.backgroundColor = .white
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(searchBar)
+        imagesTableView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(imagesTableView)
+    }
+}
