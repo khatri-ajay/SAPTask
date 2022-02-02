@@ -15,15 +15,17 @@ class DashboardVC: UIViewController {
         let searchBar = UISearchBar()
         return searchBar
     }()
-    private let imagesTableView: UITableView = {
-        let tableview = UITableView()
-//        tableview.register(MovieTableViewCell.self, forCellReuseIdentifier: cellIdentifier.MovieTableViewCell)
-        tableview.backgroundColor = .white
-        tableview.separatorStyle = .none
-        return tableview
+    private let imagesCollectionView : UICollectionView = {
+        let viewLayout = UICollectionViewFlowLayout()
+        viewLayout.scrollDirection = .horizontal
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: viewLayout)
+        collectionView.backgroundColor = .white
+        return collectionView
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViews()
+        setupLayouts()
         // Do any additional setup after loading the view.
     }
 
@@ -34,7 +36,25 @@ extension DashboardVC {
         view.backgroundColor = .white
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(searchBar)
-        imagesTableView.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(imagesTableView)
+        imagesCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(imagesCollectionView)
+    }
+}
+extension DashboardVC{
+    // MARK: - Adding Constraints
+    private func setupLayouts() {
+        // Search Bar Constraints
+        searchBar.applyConstraints(
+            .top(to: view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            .leading(to: view.safeAreaLayoutGuide.leadingAnchor, constant: 0),
+            .trailing(to: view.safeAreaLayoutGuide.trailingAnchor, constant: 0)
+        )
+        // Collection View Constraints
+        imagesCollectionView.applyConstraints(
+            .top(to: searchBar.bottomAnchor, constant: 0),
+            .leading(to: view.safeAreaLayoutGuide.leadingAnchor, constant: 0),
+            .trailing(to: view.safeAreaLayoutGuide.trailingAnchor, constant: 0),
+            .bottom(to: view.safeAreaLayoutGuide.bottomAnchor, constant: 0)
+        )
     }
 }
