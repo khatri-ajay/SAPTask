@@ -15,6 +15,9 @@
 		2DA24B7B27AB42A800E812E6 /* SAPTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA24B7A27AB42A800E812E6 /* SAPTaskUITests.swift */; };
 		2DA24B7D27AB42A800E812E6 /* SAPTaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA24B7C27AB42A800E812E6 /* SAPTaskUITestsLaunchTests.swift */; };
 		2DA24B8C27AB43EE00E812E6 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA24B8B27AB43ED00E812E6 /* DashboardVC.swift */; };
+		3F33EB61674B57FFF9B2E85B /* Pods_SAPTask_SAPTaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5FCD2BF6E53C62270D74E98 /* Pods_SAPTask_SAPTaskUITests.framework */; };
+		4CAA1A9D66F82B6216FAF248 /* Pods_SAPTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF5203FB90244CB894EDD0F7 /* Pods_SAPTask.framework */; };
+		72B530D551D7A3C9144D68D0 /* Pods_SAPTaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FD115FE930CB65C0F57FDFA /* Pods_SAPTaskTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0AC7625EB939E9E6D09C2BC4 /* Pods-SAPTaskTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAPTaskTests.release.xcconfig"; path = "Target Support Files/Pods-SAPTaskTests/Pods-SAPTaskTests.release.xcconfig"; sourceTree = "<group>"; };
 		2DA24B5627AB42A500E812E6 /* SAPTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SAPTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DA24B5927AB42A500E812E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DA24B5B27AB42A500E812E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +51,14 @@
 		2DA24B7A27AB42A800E812E6 /* SAPTaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAPTaskUITests.swift; sourceTree = "<group>"; };
 		2DA24B7C27AB42A800E812E6 /* SAPTaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAPTaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2DA24B8B27AB43ED00E812E6 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
+		2FD115FE930CB65C0F57FDFA /* Pods_SAPTaskTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SAPTaskTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		33610726D311E4BE7CE0E93C /* Pods-SAPTaskTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAPTaskTests.debug.xcconfig"; path = "Target Support Files/Pods-SAPTaskTests/Pods-SAPTaskTests.debug.xcconfig"; sourceTree = "<group>"; };
+		628C2B833DE2498FCD98DDAB /* Pods-SAPTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAPTask.debug.xcconfig"; path = "Target Support Files/Pods-SAPTask/Pods-SAPTask.debug.xcconfig"; sourceTree = "<group>"; };
+		8C6E57975C211FEAA3EACACE /* Pods-SAPTask-SAPTaskUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAPTask-SAPTaskUITests.debug.xcconfig"; path = "Target Support Files/Pods-SAPTask-SAPTaskUITests/Pods-SAPTask-SAPTaskUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AE105A60AD8E5D0DB4A7DED8 /* Pods-SAPTask-SAPTaskUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAPTask-SAPTaskUITests.release.xcconfig"; path = "Target Support Files/Pods-SAPTask-SAPTaskUITests/Pods-SAPTask-SAPTaskUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B2FFDFA50C2838958E8EF045 /* Pods-SAPTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAPTask.release.xcconfig"; path = "Target Support Files/Pods-SAPTask/Pods-SAPTask.release.xcconfig"; sourceTree = "<group>"; };
+		C5FCD2BF6E53C62270D74E98 /* Pods_SAPTask_SAPTaskUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SAPTask_SAPTaskUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF5203FB90244CB894EDD0F7 /* Pods_SAPTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SAPTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CAA1A9D66F82B6216FAF248 /* Pods_SAPTask.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72B530D551D7A3C9144D68D0 /* Pods_SAPTaskTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F33EB61674B57FFF9B2E85B /* Pods_SAPTask_SAPTaskUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +96,8 @@
 				2DA24B6F27AB42A800E812E6 /* SAPTaskTests */,
 				2DA24B7927AB42A800E812E6 /* SAPTaskUITests */,
 				2DA24B5727AB42A500E812E6 /* Products */,
+				90B19258CDF2B43409E32AAD /* Pods */,
+				DA36E893CEF26FE9E211B2CE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -148,6 +165,30 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		90B19258CDF2B43409E32AAD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				628C2B833DE2498FCD98DDAB /* Pods-SAPTask.debug.xcconfig */,
+				B2FFDFA50C2838958E8EF045 /* Pods-SAPTask.release.xcconfig */,
+				8C6E57975C211FEAA3EACACE /* Pods-SAPTask-SAPTaskUITests.debug.xcconfig */,
+				AE105A60AD8E5D0DB4A7DED8 /* Pods-SAPTask-SAPTaskUITests.release.xcconfig */,
+				33610726D311E4BE7CE0E93C /* Pods-SAPTaskTests.debug.xcconfig */,
+				0AC7625EB939E9E6D09C2BC4 /* Pods-SAPTaskTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DA36E893CEF26FE9E211B2CE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF5203FB90244CB894EDD0F7 /* Pods_SAPTask.framework */,
+				C5FCD2BF6E53C62270D74E98 /* Pods_SAPTask_SAPTaskUITests.framework */,
+				2FD115FE930CB65C0F57FDFA /* Pods_SAPTaskTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -155,9 +196,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2DA24B8027AB42A800E812E6 /* Build configuration list for PBXNativeTarget "SAPTask" */;
 			buildPhases = (
+				B892BBF11F2682E99A7B66B0 /* [CP] Check Pods Manifest.lock */,
 				2DA24B5227AB42A500E812E6 /* Sources */,
 				2DA24B5327AB42A500E812E6 /* Frameworks */,
 				2DA24B5427AB42A500E812E6 /* Resources */,
+				2E7AC9DC628EFD56B95E2C40 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -172,6 +215,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2DA24B8327AB42A800E812E6 /* Build configuration list for PBXNativeTarget "SAPTaskTests" */;
 			buildPhases = (
+				DC931EB8BECB94BC45ABE13E /* [CP] Check Pods Manifest.lock */,
 				2DA24B6827AB42A800E812E6 /* Sources */,
 				2DA24B6927AB42A800E812E6 /* Frameworks */,
 				2DA24B6A27AB42A800E812E6 /* Resources */,
@@ -190,9 +234,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2DA24B8627AB42A800E812E6 /* Build configuration list for PBXNativeTarget "SAPTaskUITests" */;
 			buildPhases = (
+				1FEA000EFB69FF8130239191 /* [CP] Check Pods Manifest.lock */,
 				2DA24B7227AB42A800E812E6 /* Sources */,
 				2DA24B7327AB42A800E812E6 /* Frameworks */,
 				2DA24B7427AB42A800E812E6 /* Resources */,
+				56919A17D67BCFC5A1B78B86 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -272,6 +318,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1FEA000EFB69FF8130239191 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SAPTask-SAPTaskUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2E7AC9DC628EFD56B95E2C40 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SAPTask/Pods-SAPTask-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SAPTask/Pods-SAPTask-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SAPTask/Pods-SAPTask-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		56919A17D67BCFC5A1B78B86 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SAPTask-SAPTaskUITests/Pods-SAPTask-SAPTaskUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SAPTask-SAPTaskUITests/Pods-SAPTask-SAPTaskUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SAPTask-SAPTaskUITests/Pods-SAPTask-SAPTaskUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B892BBF11F2682E99A7B66B0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SAPTask-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC931EB8BECB94BC45ABE13E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SAPTaskTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2DA24B5227AB42A500E812E6 /* Sources */ = {
@@ -446,6 +595,7 @@
 		};
 		2DA24B8127AB42A800E812E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 628C2B833DE2498FCD98DDAB /* Pods-SAPTask.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -474,6 +624,7 @@
 		};
 		2DA24B8227AB42A800E812E6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2FFDFA50C2838958E8EF045 /* Pods-SAPTask.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -502,6 +653,7 @@
 		};
 		2DA24B8427AB42A800E812E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33610726D311E4BE7CE0E93C /* Pods-SAPTaskTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -522,6 +674,7 @@
 		};
 		2DA24B8527AB42A800E812E6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0AC7625EB939E9E6D09C2BC4 /* Pods-SAPTaskTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -542,6 +695,7 @@
 		};
 		2DA24B8727AB42A800E812E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C6E57975C211FEAA3EACACE /* Pods-SAPTask-SAPTaskUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -560,6 +714,7 @@
 		};
 		2DA24B8827AB42A800E812E6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE105A60AD8E5D0DB4A7DED8 /* Pods-SAPTask-SAPTaskUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -1,0 +1,6 @@
+framework module PrettyConstraints {
+  umbrella header "PrettyConstraints-umbrella.h"
+
+  export *
+  module * { export * }
+}

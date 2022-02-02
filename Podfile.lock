@@ -1,0 +1,16 @@
+PODS:
+  - PrettyConstraints (0.0.3)
+
+DEPENDENCIES:
+  - PrettyConstraints
+
+SPEC REPOS:
+  trunk:
+    - PrettyConstraints
+
+SPEC CHECKSUMS:
+  PrettyConstraints: 40c035a4659fc527cc881c095dc246e37822380f
+
+PODFILE CHECKSUM: 8d37b34f09865db5305fc59306e4399e8ca4d664
+
+COCOAPODS: 1.11.2

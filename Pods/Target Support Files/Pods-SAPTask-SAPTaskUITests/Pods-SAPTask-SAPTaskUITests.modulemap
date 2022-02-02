@@ -1,0 +1,6 @@
+framework module Pods_SAPTask_SAPTaskUITests {
+  umbrella header "Pods-SAPTask-SAPTaskUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

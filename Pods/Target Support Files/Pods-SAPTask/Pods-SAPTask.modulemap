@@ -1,0 +1,6 @@
+framework module Pods_SAPTask {
+  umbrella header "Pods-SAPTask-umbrella.h"
+
+  export *
+  module * { export * }
+}
