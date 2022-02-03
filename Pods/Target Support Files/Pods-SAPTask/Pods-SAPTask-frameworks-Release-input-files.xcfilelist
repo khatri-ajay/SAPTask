@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-SAPTask/Pods-SAPTask-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/PrettyConstraints/PrettyConstraints.framework

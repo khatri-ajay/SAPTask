@@ -7,6 +7,7 @@ target 'SAPTask' do
 
   # Pods for SAPTask
 	pod 'PrettyConstraints'
+  pod 'Alamofire'
 
   target 'SAPTaskTests' do
     inherit! :search_paths

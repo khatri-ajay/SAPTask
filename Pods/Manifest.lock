@@ -1,16 +1,20 @@
 PODS:
+  - Alamofire (5.5.0)
   - PrettyConstraints (0.0.3)
 
 DEPENDENCIES:
+  - Alamofire
   - PrettyConstraints
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - PrettyConstraints
 
 SPEC CHECKSUMS:
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
   PrettyConstraints: 40c035a4659fc527cc881c095dc246e37822380f
 
-PODFILE CHECKSUM: 8d37b34f09865db5305fc59306e4399e8ca4d664
+PODFILE CHECKSUM: b0f8bff5e7229dae836ec4b3184e5195e472e2dc
 
 COCOAPODS: 1.11.2
