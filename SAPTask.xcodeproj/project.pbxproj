@@ -15,6 +15,10 @@
 		2DA24B7B27AB42A800E812E6 /* SAPTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA24B7A27AB42A800E812E6 /* SAPTaskUITests.swift */; };
 		2DA24B7D27AB42A800E812E6 /* SAPTaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA24B7C27AB42A800E812E6 /* SAPTaskUITestsLaunchTests.swift */; };
 		2DA24B8C27AB43EE00E812E6 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA24B8B27AB43ED00E812E6 /* DashboardVC.swift */; };
+		2DA24B9327AB55C900E812E6 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA24B9227AB55C900E812E6 /* Constant.swift */; };
+		2DA24B9827AB59AA00E812E6 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA24B9727AB59AA00E812E6 /* ImageCollectionViewCell.swift */; };
+		2DA24B9B27AB5A0700E812E6 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA24B9A27AB5A0700E812E6 /* NSObject.swift */; };
+		2DA24B9D27AB5CE500E812E6 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA24B9C27AB5CE400E812E6 /* ImageModel.swift */; };
 		3F33EB61674B57FFF9B2E85B /* Pods_SAPTask_SAPTaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5FCD2BF6E53C62270D74E98 /* Pods_SAPTask_SAPTaskUITests.framework */; };
 		4CAA1A9D66F82B6216FAF248 /* Pods_SAPTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF5203FB90244CB894EDD0F7 /* Pods_SAPTask.framework */; };
 		72B530D551D7A3C9144D68D0 /* Pods_SAPTaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FD115FE930CB65C0F57FDFA /* Pods_SAPTaskTests.framework */; };
@@ -51,6 +55,10 @@
 		2DA24B7A27AB42A800E812E6 /* SAPTaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAPTaskUITests.swift; sourceTree = "<group>"; };
 		2DA24B7C27AB42A800E812E6 /* SAPTaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAPTaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2DA24B8B27AB43ED00E812E6 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
+		2DA24B9227AB55C900E812E6 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		2DA24B9727AB59AA00E812E6 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		2DA24B9A27AB5A0700E812E6 /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
+		2DA24B9C27AB5CE400E812E6 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		2FD115FE930CB65C0F57FDFA /* Pods_SAPTaskTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SAPTaskTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33610726D311E4BE7CE0E93C /* Pods-SAPTaskTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAPTaskTests.debug.xcconfig"; path = "Target Support Files/Pods-SAPTaskTests/Pods-SAPTaskTests.debug.xcconfig"; sourceTree = "<group>"; };
 		628C2B833DE2498FCD98DDAB /* Pods-SAPTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAPTask.debug.xcconfig"; path = "Target Support Files/Pods-SAPTask/Pods-SAPTask.debug.xcconfig"; sourceTree = "<group>"; };
@@ -114,8 +122,9 @@
 		2DA24B5827AB42A500E812E6 /* SAPTask */ = {
 			isa = PBXGroup;
 			children = (
-				2DA24B8D27AB442000E812E6 /* Models */,
-				2DA24B8927AB43B200E812E6 /* Controllers */,
+				2DA24B9927AB59DC00E812E6 /* Extension */,
+				2DA24B8F27AB4B5B00E812E6 /* MVC */,
+				2DA24B8E27AB4B4F00E812E6 /* Constant */,
 				2DA24B5927AB42A500E812E6 /* AppDelegate.swift */,
 				2DA24B5B27AB42A500E812E6 /* SceneDelegate.swift */,
 				2DA24B6227AB42A800E812E6 /* Assets.xcassets */,
@@ -142,12 +151,12 @@
 			path = SAPTaskUITests;
 			sourceTree = "<group>";
 		};
-		2DA24B8927AB43B200E812E6 /* Controllers */ = {
+		2DA24B8927AB43B200E812E6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				2DA24B8A27AB43C700E812E6 /* DashboardVC */,
 			);
-			path = Controllers;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		2DA24B8A27AB43C700E812E6 /* DashboardVC */ = {
@@ -158,11 +167,62 @@
 			path = DashboardVC;
 			sourceTree = "<group>";
 		};
-		2DA24B8D27AB442000E812E6 /* Models */ = {
+		2DA24B8D27AB442000E812E6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2DA24B9E27AB5CEB00E812E6 /* ImageModel */,
 			);
-			path = Models;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2DA24B8E27AB4B4F00E812E6 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				2DA24B9227AB55C900E812E6 /* Constant.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		2DA24B8F27AB4B5B00E812E6 /* MVC */ = {
+			isa = PBXGroup;
+			children = (
+				2DA24B8D27AB442000E812E6 /* Model */,
+				2DA24B9027AB4BC400E812E6 /* View */,
+				2DA24B8927AB43B200E812E6 /* Controller */,
+			);
+			path = MVC;
+			sourceTree = "<group>";
+		};
+		2DA24B9027AB4BC400E812E6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2DA24B9127AB4BF000E812E6 /* ImageCollectionViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2DA24B9127AB4BF000E812E6 /* ImageCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2DA24B9727AB59AA00E812E6 /* ImageCollectionViewCell.swift */,
+			);
+			path = ImageCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		2DA24B9927AB59DC00E812E6 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2DA24B9A27AB5A0700E812E6 /* NSObject.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		2DA24B9E27AB5CEB00E812E6 /* ImageModel */ = {
+			isa = PBXGroup;
+			children = (
+				2DA24B9C27AB5CE400E812E6 /* ImageModel.swift */,
+			);
+			path = ImageModel;
 			sourceTree = "<group>";
 		};
 		90B19258CDF2B43409E32AAD /* Pods */ = {
@@ -175,7 +235,6 @@
 				33610726D311E4BE7CE0E93C /* Pods-SAPTaskTests.debug.xcconfig */,
 				0AC7625EB939E9E6D09C2BC4 /* Pods-SAPTaskTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -428,8 +487,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DA24B8C27AB43EE00E812E6 /* DashboardVC.swift in Sources */,
+				2DA24B9827AB59AA00E812E6 /* ImageCollectionViewCell.swift in Sources */,
 				2DA24B5A27AB42A500E812E6 /* AppDelegate.swift in Sources */,
+				2DA24B9B27AB5A0700E812E6 /* NSObject.swift in Sources */,
 				2DA24B5C27AB42A500E812E6 /* SceneDelegate.swift in Sources */,
+				2DA24B9327AB55C900E812E6 /* Constant.swift in Sources */,
+				2DA24B9D27AB5CE500E812E6 /* ImageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

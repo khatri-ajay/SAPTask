@@ -35,7 +35,7 @@ extension ImageCollectionViewCell{
 // MARK: - Adding Constraints
 extension ImageCollectionViewCell{
     private func setupLayouts() {
-        //constraints for `Fav Movie image`
+        // ImageView Constraints
         imageView.layer.cornerRadius = 2
         imageView.clipsToBounds = true
         imageView.applyConstraints(
