@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import ImageLoader
+
 
 class ImageCollectionViewCell: UICollectionViewCell {
     private let imageView: UIImageView = {
@@ -13,8 +15,10 @@ class ImageCollectionViewCell: UICollectionViewCell {
         imageView.backgroundColor = .red
         return imageView
     }()
-    init() {
+    override init(frame: CGRect) {
         super.init(frame: .zero)
+        setupViews()
+        setupLayouts()
     }
     
     required init?(coder: NSCoder) {
@@ -39,13 +43,16 @@ extension ImageCollectionViewCell{
         imageView.layer.cornerRadius = 2
         imageView.clipsToBounds = true
         imageView.applyConstraints(
-            .centerX(to: contentView.centerXAnchor, constant: 0),
-            .height(constant: 200))
+            .top(to: contentView.topAnchor, constant: 5),
+            .bottom(to: contentView.bottomAnchor, constant: -5),
+            .leading(to: contentView.leadingAnchor, constant: 5),
+            .trailing(to: contentView.trailingAnchor, constant: -5))
     }
 }
 // MARK: - Setup Cell With data
 extension ImageCollectionViewCell{
-    func setup(model: ImageModel) {
-        
+    func setup(model: Photo) {
+        let url = ImageModel.createImageUrl(model: model)
+        imageView.load.request(with: url)
     }
 }

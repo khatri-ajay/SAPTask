@@ -10,18 +10,22 @@ import PrettyConstraints
 
 class DashboardVC: UIViewController {
     
+    var response: Main?
+    
     // MARK: - UI Object creation
     private var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.placeholder = Strings.searchBarPlaceholder
-        searchBar.returnKeyType = .search
+//        searchBar.returnKeyType = .search
         return searchBar
     }()
     private let imagesCollectionView : UICollectionView = {
         let viewLayout = UICollectionViewFlowLayout()
-        viewLayout.scrollDirection = .horizontal
+        viewLayout.scrollDirection = .vertical
+        viewLayout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: viewLayout)
         collectionView.backgroundColor = .white
+        collectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: ImageCollectionViewCell.nameOfClass())
         return collectionView
     }()
 }
@@ -67,42 +71,45 @@ extension DashboardVC{
     func setup() {
         setupViews()
         setupLayouts()
+        searchBar.delegate = self
+    }
+    func imagesCollectionViewDelegate() {
         imagesCollectionView.delegate = self
         imagesCollectionView.dataSource = self
+    }
+    func getSearchedImages(text: String) {
+        weak var weakSelf = self
+        ImageModel.getPhotos(text: text) { object, status, message in
+            if status!{
+                weakSelf?.response = object!
+                weakSelf?.imagesCollectionViewDelegate()
+                weakSelf?.imagesCollectionView.reloadData()
+            }else{
+               // print(message)
+            }
+        }
     }
 }
 // MARK: - Images Collection View Delegate, Data Source and FlowLayout method
 extension DashboardVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource{
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0.0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout
-        collectionViewLayout: UICollectionViewLayout,
-                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10.0
-    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
-        //let size1 = (contentArray[indexPath.row] as String).size(withAttributes: nil)
         return CGSize(width: (self.view.frame.width/2) - 10 , height:  120 )
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return (response?.photos.photo.count)!
     }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.nameOfClass(),for:indexPath) as! ImageCollectionViewCell
         cell.tag = indexPath.row
         cell.backgroundColor = UIColor.clear
-        cell.setup(model: ImageModel())
-        cell.layer.cornerRadius = 5
-        cell.layer.borderWidth = 1
-        cell.layer.borderColor = UIColor.gray.cgColor
+        cell.setup(model: response!.photos.photo[indexPath.row])
         return cell
     }
-    
-    
+}
+// MARK: - UI Search Bar Delegate Method
+extension DashboardVC: UISearchBarDelegate{
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        getSearchedImages(text: searchBar.text!)
+    }
 }
