@@ -19,3 +19,6 @@ struct ServiceUrl{
 public enum HTTPMethods: String {
     case get     = "GET"
 }
+struct History {
+    static var SearchHistory: [String] = []
+}

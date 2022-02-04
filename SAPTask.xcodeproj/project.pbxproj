@@ -21,6 +21,8 @@
 		2DA24BA127AB834200E812E6 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA24BA027AB834100E812E6 /* WebService.swift */; };
 		2DD0E33A27AC9B640033F931 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0E33927AC9B640033F931 /* ImageTableViewCell.swift */; };
 		2DD0E33C27ACA4AF0033F931 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0E33B27ACA4AF0033F931 /* Utility.swift */; };
+		2DD0E34027ACAA780033F931 /* SearcHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0E33F27ACAA780033F931 /* SearcHistoryVC.swift */; };
+		2DD0E34327ACAAE60033F931 /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0E34227ACAAE60033F931 /* LabelTableViewCell.swift */; };
 		3F33EB61674B57FFF9B2E85B /* Pods_SAPTask_SAPTaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5FCD2BF6E53C62270D74E98 /* Pods_SAPTask_SAPTaskUITests.framework */; };
 		4CAA1A9D66F82B6216FAF248 /* Pods_SAPTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF5203FB90244CB894EDD0F7 /* Pods_SAPTask.framework */; };
 		72B530D551D7A3C9144D68D0 /* Pods_SAPTaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FD115FE930CB65C0F57FDFA /* Pods_SAPTaskTests.framework */; };
@@ -63,6 +65,8 @@
 		2DA24BA027AB834100E812E6 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		2DD0E33927AC9B640033F931 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		2DD0E33B27ACA4AF0033F931 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		2DD0E33F27ACAA780033F931 /* SearcHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearcHistoryVC.swift; sourceTree = "<group>"; };
+		2DD0E34227ACAAE60033F931 /* LabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
 		2FD115FE930CB65C0F57FDFA /* Pods_SAPTaskTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SAPTaskTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33610726D311E4BE7CE0E93C /* Pods-SAPTaskTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAPTaskTests.debug.xcconfig"; path = "Target Support Files/Pods-SAPTaskTests/Pods-SAPTaskTests.debug.xcconfig"; sourceTree = "<group>"; };
 		628C2B833DE2498FCD98DDAB /* Pods-SAPTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAPTask.debug.xcconfig"; path = "Target Support Files/Pods-SAPTask/Pods-SAPTask.debug.xcconfig"; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 		2DA24B8927AB43B200E812E6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2DD0E33E27ACAA150033F931 /* SearcHistoryVC */,
 				2DA24B8A27AB43C700E812E6 /* DashboardVC */,
 			);
 			path = Controller;
@@ -203,6 +208,7 @@
 		2DA24B9027AB4BC400E812E6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2DD0E34127ACAABE0033F931 /* LabelTableViewCell */,
 				2DD0E33827AC9B410033F931 /* ImageTableViewCell */,
 			);
 			path = View;
@@ -253,6 +259,22 @@
 				2DD0E33927AC9B640033F931 /* ImageTableViewCell.swift */,
 			);
 			path = ImageTableViewCell;
+			sourceTree = "<group>";
+		};
+		2DD0E33E27ACAA150033F931 /* SearcHistoryVC */ = {
+			isa = PBXGroup;
+			children = (
+				2DD0E33F27ACAA780033F931 /* SearcHistoryVC.swift */,
+			);
+			path = SearcHistoryVC;
+			sourceTree = "<group>";
+		};
+		2DD0E34127ACAABE0033F931 /* LabelTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2DD0E34227ACAAE60033F931 /* LabelTableViewCell.swift */,
+			);
+			path = LabelTableViewCell;
 			sourceTree = "<group>";
 		};
 		90B19258CDF2B43409E32AAD /* Pods */ = {
@@ -518,8 +540,10 @@
 			files = (
 				2DD0E33C27ACA4AF0033F931 /* Utility.swift in Sources */,
 				2DA24B8C27AB43EE00E812E6 /* DashboardVC.swift in Sources */,
+				2DD0E34027ACAA780033F931 /* SearcHistoryVC.swift in Sources */,
 				2DA24BA127AB834200E812E6 /* WebService.swift in Sources */,
 				2DD0E33A27AC9B640033F931 /* ImageTableViewCell.swift in Sources */,
+				2DD0E34327ACAAE60033F931 /* LabelTableViewCell.swift in Sources */,
 				2DA24B5A27AB42A500E812E6 /* AppDelegate.swift in Sources */,
 				2DA24B9B27AB5A0700E812E6 /* NSObject.swift in Sources */,
 				2DA24B5C27AB42A500E812E6 /* SceneDelegate.swift in Sources */,

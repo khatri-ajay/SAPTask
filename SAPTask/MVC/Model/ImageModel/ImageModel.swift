@@ -19,8 +19,12 @@ class ImageModel: NSObject{
         WebServices.sharedInstance.sendRequestToServer(urlString: url, methodType: HTTPMethods.get) {
             data, status, message in
             if status!{
-                let response: Main = try! JSONDecoder().decode(Main.self, from: data!)
-                completionHandler(response,status,message?.localizedDescription)
+                do{
+                    let response: Main = try JSONDecoder().decode(Main.self, from: data!)
+                    completionHandler(response,status,message?.localizedDescription)
+                }catch let error {
+                    completionHandler(nil,false,error.localizedDescription)
+                }
             }else{
                 completionHandler(nil,status,message?.localizedDescription)
             }

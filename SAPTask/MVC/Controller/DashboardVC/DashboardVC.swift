@@ -11,6 +11,7 @@ import PrettyConstraints
 class DashboardVC: UIViewController {
     
     var response: Main?
+    var searchHistory : SearcHistoryVC = SearcHistoryVC()
     
     // MARK: - UI Object creation
     private var searchBar: UISearchBar = {
@@ -25,11 +26,18 @@ class DashboardVC: UIViewController {
         tableview.separatorStyle = .none
         return tableview
     }()
+    private let historyView : UIView = {
+        let view = UIView()
+        view.backgroundColor = .darkGray
+        view.isHidden = true
+        return view
+    }()
 }
 // MARK: - View Life Cycle methods
 extension DashboardVC{
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         setup()
     }
 }
@@ -42,6 +50,8 @@ extension DashboardVC {
         self.view.addSubview(searchBar)
         imagesTableView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(imagesTableView)
+        historyView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(historyView)
     }
 }
 // MARK: - Adding Constraints
@@ -60,6 +70,13 @@ extension DashboardVC{
             .trailing(to: view.safeAreaLayoutGuide.trailingAnchor, constant: 0),
             .bottom(to: view.safeAreaLayoutGuide.bottomAnchor, constant: 0)
         )
+        historyView.applyConstraints(
+            .top(to: searchBar.bottomAnchor, constant: 0),
+            .leading(to: view.safeAreaLayoutGuide.leadingAnchor, constant: 0),
+            .trailing(to: view.safeAreaLayoutGuide.trailingAnchor, constant: 0),
+            .height(constant: 300)
+        )
+        
     }
 }
 // MARK: - ViewSetup
@@ -67,6 +84,7 @@ extension DashboardVC{
     func setup() {
         setupViews()
         setupLayouts()
+        addHistorySearchVC()
         searchBar.delegate = self
     }
     func imagesTableViewDelegate() {
@@ -76,6 +94,15 @@ extension DashboardVC{
     func disableTableViewFooter(){
         self.imagesTableView.tableFooterView = nil
         self.imagesTableView.tableFooterView?.isHidden = true
+    }
+    func addHistorySearchVC() {
+        addChild(searchHistory)
+        historyView.addSubview(searchHistory.view)
+        searchHistory.view.frame = historyView.bounds
+        searchHistory.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        searchHistory.didMove(toParent: self)
+        searchHistory.delegate = self
+
     }
     func getSearchedImages(text: String,page: Int = 1) {
         weak var weakSelf = self
@@ -92,7 +119,7 @@ extension DashboardVC{
                 }
                 weakSelf?.imagesTableView.reloadData()
             }else{
-               // print(message)
+                Utility.showAlertwithOkButton(message: message!, controller: self)
             }
         }
     }
@@ -112,7 +139,6 @@ extension DashboardVC: UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if response!.photos.page < response!.photos.pages{
-            print("need more images")
             let lastSectionIndex = tableView.numberOfSections - 1
             let lastRowIndex = tableView.numberOfRows(inSection: lastSectionIndex) - 1
             if indexPath.section ==  lastSectionIndex && indexPath.row == lastRowIndex {
@@ -132,5 +158,24 @@ extension DashboardVC: UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         getSearchedImages(text: searchBar.text!)
+        if !History.SearchHistory.contains(where: {$0 == searchBar.text!}){
+            History.SearchHistory.append(searchBar.text!)
+        }
+    }
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        if History.SearchHistory.count > 0 {
+            historyView.isHidden = false
+            searchHistory.reloadData()
+        }
+    }
+}
+
+// MARK: - History Keyword Selected protocol
+extension DashboardVC: SearcHistoryDelegate{
+    func keywordSelected(tag: Int) {
+        searchBar.text = History.SearchHistory[tag]
+        historyView.isHidden = true
+        getSearchedImages(text: searchBar.text!)
+        searchBar.resignFirstResponder()
     }
 }

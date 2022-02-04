@@ -19,7 +19,6 @@ class WebServices : NSObject{
     {
         
         let serviceUrl = urlString
-        print("serviceUrl " ,serviceUrl)
         let typeMethod: HTTPMethod = HTTPMethod(rawValue: methodType.rawValue)
         if let encoded = urlString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed),let url = URL(string: encoded)
         {

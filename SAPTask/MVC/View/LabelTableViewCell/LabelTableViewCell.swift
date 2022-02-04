@@ -1,18 +1,22 @@
 //
-//  ImageTableViewCell.swift
+//  LabelTableViewCell.swift
 //  SAPTask
 //
 //  Created by Ajay Kumar on 04/02/2022.
 //
 
 import UIKit
-import ImageLoader
 
-class ImageTableViewCell: UITableViewCell {
-    let image: UIImageView = {
-        let imageView = UIImageView()
-        imageView.backgroundColor = .white
-        return imageView
+
+class LabelTableViewCell: UITableViewCell {
+    private let title: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.textAlignment = .left
+        label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        label.numberOfLines = 1
+        label.minimumScaleFactor = 0.2
+        label.adjustsFontSizeToFitWidth = true
+        return label
     }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -24,38 +28,32 @@ class ImageTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
 }
-
 // MARK: - Adding UI object to view
-extension ImageTableViewCell{
+extension LabelTableViewCell{
     private func setupViews() {
         contentView.clipsToBounds = true
         contentView.layer.cornerRadius = 5
-        contentView.backgroundColor = .systemGray5
-        image.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(image)
+        contentView.backgroundColor = .systemGray6
+        title.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(title)
     }
 }
 // MARK: - Adding Constraints
-extension ImageTableViewCell{
+extension LabelTableViewCell{
     private func setupLayouts() {
-        // ImageView Constraints
-        image.layer.cornerRadius = 2
-        image.clipsToBounds = true
-        image.applyConstraints(
+        // Title Constraints
+        title.applyConstraints(
             .top(to: contentView.topAnchor, constant: 5),
             .bottom(to: contentView.bottomAnchor, constant: -5),
             .leading(to: contentView.leadingAnchor, constant: 5),
             .trailing(to: contentView.trailingAnchor, constant: -5),
-            .height(constant: 400))
+            .height(constant: 30))
     }
 }
 // MARK: - Setup Cell With data
-extension ImageTableViewCell{
-    func setup(model: Photo) {
-        let url = ImageModel.createImageUrl(model: model)
-        image.load.request(with: url)
+extension LabelTableViewCell{
+    func setup(text: String) {
+        title.text = text
     }
 }
-
