@@ -1,22 +1,21 @@
 //
-//  ImageCollectionViewCell.swift
+//  ImageTableViewCell.swift
 //  SAPTask
 //
-//  Created by Ajay Kumar on 03/02/2022.
+//  Created by Ajay Kumar on 04/02/2022.
 //
 
 import UIKit
-import ImageLoader
 
-
-class ImageCollectionViewCell: UICollectionViewCell {
-    private let imageView: UIImageView = {
+class ImageTableViewCell: UITableViewCell {
+    let image: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .red
         return imageView
     }()
-    override init(frame: CGRect) {
-        super.init(frame: .zero)
+
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupViews()
         setupLayouts()
     }
@@ -24,35 +23,38 @@ class ImageCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
 }
+
 // MARK: - Adding UI object to view
-extension ImageCollectionViewCell{
+extension ImageTableViewCell{
     private func setupViews() {
         contentView.clipsToBounds = true
         contentView.layer.cornerRadius = 5
         contentView.backgroundColor = .systemGray5
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(imageView)
+        image.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(image)
     }
 }
 // MARK: - Adding Constraints
-extension ImageCollectionViewCell{
+extension ImageTableViewCell{
     private func setupLayouts() {
         // ImageView Constraints
-        imageView.layer.cornerRadius = 2
-        imageView.clipsToBounds = true
-        imageView.applyConstraints(
+        image.layer.cornerRadius = 2
+        image.clipsToBounds = true
+        image.applyConstraints(
             .top(to: contentView.topAnchor, constant: 5),
             .bottom(to: contentView.bottomAnchor, constant: -5),
             .leading(to: contentView.leadingAnchor, constant: 5),
-            .trailing(to: contentView.trailingAnchor, constant: -5))
+            .trailing(to: contentView.trailingAnchor, constant: -5),
+            .height(constant: 400))
     }
 }
 // MARK: - Setup Cell With data
-extension ImageCollectionViewCell{
+extension ImageTableViewCell{
     func setup(model: Photo) {
         let url = ImageModel.createImageUrl(model: model)
-        imageView.load.request(with: url)
+        image.load.request(with: url)
     }
 }
+

@@ -13,8 +13,10 @@ class ImageModel: NSObject{
         url = url + model.server + "/" + model.id + "_" + model.secret + ".jpg"
         return URL(string: url)!
     }
-    class func getPhotos(text: String,completionHandler: @escaping (Main?, Bool?, String?) -> ()) {
-        WebServices.sharedInstance.sendRequestToServer(urlString: ServiceUrl.domainUrl + text, methodType: HTTPMethods.get) {
+    class func getPhotos(text: String,page: String,completionHandler: @escaping (Main?, Bool?, String?) -> ()) {
+        var url = ServiceUrl.domainUrl + text
+        url = url + "&page=" + page
+        WebServices.sharedInstance.sendRequestToServer(urlString: url, methodType: HTTPMethods.get) {
             data, status, message in
             if status!{
                 let response: Main = try! JSONDecoder().decode(Main.self, from: data!)
@@ -29,12 +31,12 @@ class ImageModel: NSObject{
 // MARK: - Main
 struct Main: Decodable {
     let stat: String
-    let photos: Photos
+    var photos: Photos
 }
 
 // MARK: - Photos
 struct Photos: Decodable {
-    let page, pages, perpage, total: Int
+    var page, pages, perpage, total: Int
     var photo: [Photo] = []
 }
 
